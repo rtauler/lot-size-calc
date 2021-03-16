@@ -13,7 +13,7 @@
 ['nzdusd',100000,'fx'],
 ['gbpeur',100000,'fx'],
 ['eurchf',100000,'fx'],
-['eurjpy' ,100000,'fx'],
+['eurjpy',100000,'fx'],
 ['audchf',100000,'fx'],
 ['audjpy',100000,'fx'],
 ['cadchf',100000,'fx'],

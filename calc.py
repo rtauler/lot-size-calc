@@ -39,14 +39,14 @@ for i in contract_list:
 max_risk_x_pip = ammount_at_risk/pips
 
 #get the recommended lot
-rec_lot = max_risk_x_pip/10
+rec_lot = max_risk_x_pip
 
 #get the roundup lot
 rec_lot_round = round(rec_lot, 2)
 
 #get projected amm to risk & win
-proj_amm_risk = round((rec_lot_round * pips) * 10, 2)
-proj_amm_win = round(((rec_lot_round * pips) * 10) * win_ratio, 2)
+proj_amm_risk = round((rec_lot_round * pips), 2)
+proj_amm_win = round(((rec_lot_round * pips)) * win_ratio, 2)
 
 #get projected % risk
 proj_risk = round(proj_amm_risk/balance,2)*100
