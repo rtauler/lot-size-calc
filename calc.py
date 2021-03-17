@@ -35,11 +35,8 @@ for i in contract_list:
 	if symbol == i[0]:
 		pips = diff_e_sl * i[1]
 
-#max amount to risk for pip
-max_risk_x_pip = ammount_at_risk/pips
-
 #get the recommended lot
-rec_lot = max_risk_x_pip
+rec_lot = ammount_at_risk/pips
 
 #get the roundup lot
 rec_lot_round = round(rec_lot, 2)
