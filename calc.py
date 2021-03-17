@@ -35,6 +35,8 @@ for i in contract_list:
 	if symbol == i[0]:
 		pips = diff_e_sl * i[1]
 
+#----
+
 #get the recommended lot
 rec_lot = ammount_at_risk/pips
 
@@ -47,6 +49,21 @@ proj_amm_win = round(((rec_lot_round * pips)) * win_ratio, 2)
 
 #get projected % risk
 proj_risk = round(proj_amm_risk/balance,2)*100
+
+#------
+
+#define a min viable lot for when the recommended lot is smaller 
+#than 0.01 but still want to trade at least 0.01
+min_lot = 0.01
+
+#get min amm to risk & win
+min_amm_risk = round((min_lot * pips), 2)
+min_amm_win = round(((min_lot * pips)) * win_ratio, 2)
+
+#get min % risk
+min_risk = round(min_amm_risk/balance,2)*100
+
+#-----
 
 #check if operation is OK, neutral or KO
 if rec_lot >= 0.01 and rec_lot_round >= 0.01:
@@ -74,4 +91,10 @@ print('GENERATED OPERATION is:',op_stat, '\n',
 	'Project. risk:		',proj_risk,'%\n',
 	'Project. amm risk:	',proj_amm_risk,'$\n',
 	'Project. amm win:	',proj_amm_win,'$\n',
+	'-----------------------------------\n',
+	'Min viab. lot:		',min_lot,'\n',
+	'Min viab. risk:	',min_risk,'%\n',
+	'Min viab. amm risk:	',min_amm_risk,'$\n',
+	'Min viab. amm win:	',min_amm_win,'$\n',
+	'-----------------------------------\n'
 	)
