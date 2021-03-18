@@ -1,59 +1,72 @@
 #contract list list values
 from contracts import contract_list
 
-win_ratio = 2
-
 #inptus for user
 symbol = input('Symbol?\n')
 balance = float(input('Balance?\n'))
 risk = float(input('Risk?\n'))
+win_ratio = float(input("Win ratio?") or "2")
 op_type = input('Operation Type? (buy/sell)\n')
 entry_price = float(input('Entry price?\n'))
 stop_loss = float(input('Stop Loss?\n'))
 man_tp = input('Take Profit? (optional)\n')
 man_lot = input('Lot? (optional)\n')
 
+
 #fixed variables based on the user input
-ammount_at_risk = (risk*0.01) * balance
+ammount_at_risk = (risk * 0.01) * balance
 ammount_to_win = ammount_at_risk * win_ratio
 
 #Difference between entry and stop loss, also the tp
-if(op_type == "buy"):
+if(op_type == 'buy'):
+	#generate difference between entry price and stop loss
 	diff_e_sl = entry_price - stop_loss
 	tp = round((diff_e_sl * win_ratio) + entry_price,5)
+	#check if user has inputed manual take profit
+	#ignore generated Take profit if Take profit is inputed manually from the user
+	if man_tp != '':
+		#generate the difference between entry price and manual take profit
+		tp = float(man_tp)
+		diff_e_tp = tp - entry_price
 
-elif(op_type == "sell"):
+elif(op_type == 'sell'):
+	#generate difference between entry price and stop loss
 	diff_e_sl = stop_loss - entry_price
 	tp = round((diff_e_sl * win_ratio) - entry_price,5)
 	#make nnumber absolute (take out the '-')
 	tp = abs(tp)
-
-#ignore generated Take profit if Take profit is inputed manually from the user
-if man_tp != "":
-	tp = float(man_tp)
+	#check if user has inputed manual take profit
+	#ignore generated Take profit if Take profit is inputed manually from the user
+	if man_tp != '':
+		#generate the difference between entry price and manual take profit
+		tp = float(man_tp)
+		diff_e_tp = entry_price - tp
 
 #iterate through the list to get the contract and genrate the number of pips
 for i in contract_list:
-
+#when a symbol is found:
 	if symbol == i[0]:
+		#generate pips for stop loss
 		sl_pips = diff_e_sl * i[1]
+
+		#generate pips for take profit
+		tp_pips = diff_e_tp * i[1]
 
 #----
 
 #get the recommended lot
 #if lot is inputed manually use the one inputed by the user
-if man_lot != "":
+if man_lot != '':
 	rec_lot = float(man_lot)
 else:
 	rec_lot = ammount_at_risk/sl_pips
-
 
 #get the roundup lot
 rec_lot_round = round(rec_lot, 2)
 
 #get projected amm to risk & win
 proj_amm_risk = round((rec_lot_round * sl_pips), 2)
-proj_amm_win = round(((rec_lot_round * sl_pips)) * win_ratio, 2)
+proj_amm_win = round((rec_lot_round * tp_pips), 2)
 
 #get projected % risk
 proj_risk = round(proj_amm_risk/balance,2)*100
@@ -66,7 +79,7 @@ min_lot = 0.01
 
 #get min amm to risk & win
 min_amm_risk = round((min_lot * sl_pips), 2)
-min_amm_win = round(((min_lot * sl_pips)) * win_ratio, 2)
+min_amm_win = round((min_lot * tp_pips), 2)
 
 #get min % risk
 min_risk = round(min_amm_risk/balance,2)*100
