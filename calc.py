@@ -5,7 +5,7 @@ from contracts import contract_list
 symbol = input('Symbol?\n')
 balance = float(input('Balance?\n'))
 risk = float(input('Risk?\n'))
-win_ratio = float(input("Win ratio?") or "2")
+win_ratio = float(input("Win ratio? (optional)") or "2")
 op_type = input('Operation Type? (buy/sell)\n')
 entry_price = float(input('Entry price?\n'))
 stop_loss = float(input('Stop Loss?\n'))
@@ -39,7 +39,7 @@ elif(op_type == 'sell'):
 	#ignore generated Take profit if Take profit is inputed manually from the user
 	if man_tp != '':
 		#generate the difference between entry price and manual take profit
-		tp = float(man_tp)
+		tp = abs(float(man_tp))
 		diff_e_tp = entry_price - tp
 
 #iterate through the list to get the contract and genrate the number of pips
