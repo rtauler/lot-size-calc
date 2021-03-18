@@ -6,7 +6,6 @@ symbol = input('Symbol?\n')
 balance = float(input('Balance?\n'))
 risk = float(input('Risk?\n'))
 win_ratio = float(input("Win ratio? (optional)") or "2")
-op_type = input('Operation Type? (buy/sell)\n')
 entry_price = float(input('Entry price?\n'))
 stop_loss = float(input('Stop Loss?\n'))
 man_tp = input('Take Profit? (optional)\n')
@@ -15,10 +14,10 @@ man_lot = input('Lot? (optional)\n')
 
 #fixed variables based on the user input
 ammount_at_risk = (risk * 0.01) * balance
-ammount_to_win = ammount_at_risk * win_ratio
 
-#Difference between entry and stop loss, also the tp
-if(op_type == 'buy'):
+#if stop loss is less than entry price then its a BUY
+if(stop_loss < entry_price):
+	op_type = 'BUY'
 	#generate difference between entry price and stop loss
 	diff_e_sl = entry_price - stop_loss
 	tp = round((diff_e_sl * win_ratio) + entry_price,5)
@@ -29,7 +28,9 @@ if(op_type == 'buy'):
 		tp = float(man_tp)
 		diff_e_tp = tp - entry_price
 
-elif(op_type == 'sell'):
+#if stop loss is more than entry price then its a SELL 
+elif(stop_loss > entry_price):
+	op_type = 'SELL'
 	#generate difference between entry price and stop loss
 	diff_e_sl = stop_loss - entry_price
 	tp = round((diff_e_sl * win_ratio) - entry_price,5)
