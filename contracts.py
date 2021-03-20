@@ -6,6 +6,7 @@
 ['xrpusd',100000,'crypto'],
 ['eurusd',100000,'fx'],
 ['usdjpy',100,'fx'],
+['gbpjpy',100,'fx'],
 ['gbpusd',100000,'fx'],
 ['usdchf',100000,'fx'],
 ['audusd',100000,'fx'],
