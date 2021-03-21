@@ -3,9 +3,9 @@ from contracts import contract_list
 
 #inptus for user
 symbol = input('Symbol?\n')
-balance = float(input('Balance?\n'))
-risk = float(input('Risk?\n'))
-win_ratio = float(input("Win ratio? (optional)") or "2")
+balance = float(input('Balance? (default is 1000) \n') or 1000)
+risk = float(input('Risk? (default is 3) \n') or 3)
+win_ratio = float(input("Win ratio? (optional)\n") or 2)
 entry_price = float(input('Entry price?\n'))
 stop_loss = float(input('Stop Loss?\n'))
 man_tp = input('Take Profit? (optional)\n')
@@ -109,14 +109,13 @@ print('GENERATED OPERATION is:',op_stat, '\n',
 	'Entry Price:		',entry_price,'$\n',
 	'Stop Loss:		',stop_loss,'$\n',
 	'Take Profit:		',tp,'$\n',
-	'-----------------------------------\n',
+	'------------ RECOMMENDED LOT ------------\n',
 	'Recommended lot:	',round(rec_lot,3),'\n',
 	'Roundup lot:		',rec_lot_round,'\n',
-	'-----------------------------------\n',
 	'Project. risk:		',proj_risk,'%\n',
-	'Project. amm risk:	',proj_amm_risk,'$\n',
-	'Project. amm win:	',proj_amm_win,'$\n',
-	'-----------------------------------\n',
+	'Project. amm risk:	',proj_amm_risk,'$ //',int(sl_pips),'pips\n',
+	'Project. amm win:	',proj_amm_win,'$ //',int(tp_pips),'pips\n',
+	'-------------- MINIMUM LOT --------------\n',
 	'Min viab. lot:		',min_lot,'\n',
 	'Min viab. risk:	',min_risk,'%\n',
 	'Min viab. amm risk:	',min_amm_risk,'$\n',
