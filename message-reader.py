@@ -4,6 +4,8 @@ from contracts import contract_list
 #import regular expressions
 import re
 
+
+
 #import the signal raw text
 signal_raw = open("usdcad", "r")
 
