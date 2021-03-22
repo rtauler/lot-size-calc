@@ -1,0 +1,10 @@
+Instrument: GBPJPY
+Order: BUY STOP
+Entry price: 150.82
+Stop Loss: 150.47
+Tp1: 151.18
+Tp2:151.75
+Recommended Risk: 1%
+RRR: 1:2
+
+Signal validity period: Good until cancelled

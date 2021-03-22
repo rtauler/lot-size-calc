@@ -1,0 +1,9 @@
+Instrument: WTI / USOUSD
+Order: SELL NOW
+Entry price: 61.19
+Stop Loss: 61.88
+Tp1: 59.41
+Recommended Risk: 1%
+RRR: 1:2
+
+Signal validity period: Good until cancelled

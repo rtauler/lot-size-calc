@@ -5,6 +5,7 @@
 ['ltcusd',100,'crypto'],
 ['xrpusd',100000,'crypto'],
 ['eurusd',100000,'fx'],
+['usoil',100000,'fx'],
 ['usdjpy',1000,'fx'],
 ['gbpjpy',1000,'fx'],
 ['gbpusd',100000,'fx'],
