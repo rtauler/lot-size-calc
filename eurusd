@@ -1,7 +1,8 @@
-Instrument: EURUSD (INTRA DAY)
-Order: Buy (Instant Execution)
-Entry price: 1.1927
-Stop: 1.1870
-Target: 1.1989
-Recommended risk: 1%
-RRR: 1:2
+Instrument: EURUSD
+Order: BUY STOP
+Entry price: 1.19365
+Stop Loss: 1.19250
+Tp1: 1.1954 (50% off)
+Tp2: 1.19850 (50% off)
+Recommended Risk: 1%
+RRR: 1:4.3 to tp2
