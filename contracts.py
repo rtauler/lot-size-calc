@@ -1,6 +1,7 @@
 ﻿contract_list = [['btcusd',10,'crypto'],
 ['ethusd',100,'crypto'],
 ['xauusd',100,'metal'],
+['gold',100,'metal'],
 ['xagusd',5000,'metal'],
 ['ltcusd',100,'crypto'],
 ['xrpusd',100000,'crypto'],
@@ -32,4 +33,10 @@
 ['nzdjpy',1000,'fx'],
 ['audcad',100000,'fx'],
 ['eurgbp',100000,'fx'],
-['bnbusd',1000,'crypto']]
+['bnbusd',1000,'crypto'],
+['uk100',100,'index'],
+['us30',100,'index'],
+['us500',100,'index'],
+['sp500',100,'index'],
+['spx500',100,'index'],
+]

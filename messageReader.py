@@ -28,7 +28,7 @@ def readMessage(a):
 			stop_loss = ''.join(re.findall("\d+\.\d+", i))
 		
 		#Take profit 1
-		if 'Target' in i or 'Tp1' in i:
+		if 'Target' in i or 'Tp1' in i or 'TP1' in i:
 			#print(i)
 			take_profit_1 = ''.join(re.findall("\d+\.\d+", i))
 
