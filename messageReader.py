@@ -14,8 +14,13 @@ def readMessage(a):
 	for i in signal_arr:
 		#search for symbol
 		if 'Instrument:' in i:
+			#remove the "/" if necessary that divides the currencies sometimes
+			if '/' in i:
+				i = re.sub('/', '', i)
+				
 			symbol_original = i.split("Instrument: ",1)[1]
 			symbol = symbol_original.lower()
+
 
 		#Search for entry price
 		if 'Entry' in i or 'entry' in i or 'EP' in i or 'Price' in i or 'price' in i:
@@ -45,7 +50,7 @@ def readMessage(a):
 
 	# print('-----')
 
-	opList = [['SYM',symbol],['EP',entry_price],['SL',stop_loss],['TP1',take_profit_1],['RSK',risk]]
+	opList = [['Symbol',symbol],['EntryPrice',entry_price],['StopLoss',stop_loss],['TakeProfit1',take_profit_1],['Risk',risk]]
 
 	return opList
 

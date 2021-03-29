@@ -102,7 +102,7 @@ def calcLot(symbol,balance,risk,win_ratio,entry_price,stop_loss,man_tp,man_lot):
 		op_stat = 'KO' 
 
 	#create a list with all the resulting data
-	opLot = [['RL',rec_lot],['RLR',rec_lot_round],['PR',proj_risk],['PAR',proj_amm_risk],['PAW',proj_amm_win],['MVP',min_lot],['MVR',min_risk],['MVW',min_amm_win]]
+	opLot = [['RecommendedLot',rec_lot],['RecommendedLotRounded',rec_lot_round],['ProjectedRisk',proj_risk],['ProjectedAmmountRisk',proj_amm_risk],['ProjectedAmmountWin',proj_amm_win],['MinimumViableLot',min_lot],['MinimumViableRisk',min_risk],['MinimumViableWin',min_amm_win]]
 
 	#return the list to be used in the function
 	return opLot
