@@ -102,32 +102,12 @@ def calcLot(symbol,balance,risk,win_ratio,entry_price,stop_loss,man_tp,man_lot):
 		op_stat = 'KO' 
 
 	#create a list with all the resulting data
-	opLot = [['RecommendedLot',rec_lot],['RecommendedLotRounded',rec_lot_round],['ProjectedRisk',proj_risk],['ProjectedAmmountRisk',proj_amm_risk],['ProjectedAmmountWin',proj_amm_win],['MinimumViableLot',min_lot],['MinimumViableRisk',min_risk],['MinimumViableWin',min_amm_win]]
+	opLot = {'RecommendedLot':rec_lot,'RecommendedLotRounded':rec_lot_round,'StopLossPips':
+	sl_pips,'TakeProfit1Pips':tp_pips,'ProjectedRisk':proj_risk,'ProjectedAmmountRisk':
+	proj_amm_risk,'ProjectedAmmountWin':proj_amm_win,'MinimumViableLot':min_lot,
+	'MinimumViableRisk':min_risk,'MinimumViableWin':min_amm_win}
 
 	#return the list to be used in the function
 	return opLot
 
-	# print('GENERATED OPERATION is:',op_stat, '\n',
-	# 	'-----------------------------------\n',
-	# 	'Symbol:		',symbol,'\n',
-	# 	'Account Balance:	',balance,'$\n',
-	# 	'User inputed Risk:	',risk,'%\n',
-	# 	'Operation type:	',op_type,'\n',
-	# 	'Entry Price:		',entry_price,'$\n',
-	# 	'Stop Loss:		',stop_loss,'$\n',
-	# 	'Take Profit:		',tp,'$\n',
-	# 	'------------ RECOMMENDED LOT ------------\n',
-	# 	'Recommended lot:	',round(rec_lot,3),'\n',
-	# 	'Roundup lot:		',rec_lot_round,'\n',
-	# 	'Project. risk:		',proj_risk,'%\n',
-	# 	'Project. amm risk:	',proj_amm_risk,'$ //',int(sl_pips),'pips\n',
-	# 	'Project. amm win:	',proj_amm_win,'$ //',int(tp_pips),'pips\n',
-	# 	'-------------- MINIMUM LOT --------------\n',
-	# 	'Min viab. lot:		',min_lot,'\n',
-	# 	'Min viab. risk:	',min_risk,'%\n',
-	# 	'Min viab. amm risk:	',min_amm_risk,'$\n',
-	# 	'Min viab. amm win:	',min_amm_win,'$\n',
-	# 	'-----------------------------------\n'
-	# 	)
 
-#calcLot(symbol,balance,risk,win_ratio,entry_price,stop_loss,man_tp,man_lot)

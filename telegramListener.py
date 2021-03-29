@@ -6,7 +6,9 @@ from telethon import TelegramClient, events, sync
 from messageReader import readMessage
 from calc import calcLot
 
-from order import openOrder
+from operator import itemgetter
+
+#from order import openOrder
 
 
 
@@ -46,37 +48,30 @@ async def newMessageListener(event):
 		print(extData)
 		#extract the specifics in the list
 		print('----CALCULATED LOT-----')
-		for i in extData:
-			if 'Symbol' == i[0]:
-				symbol = i[1]
-			elif 'EntryPrice' == i[0]:
-				entry_price = i[1]
-			elif 'StopLoss' == i[0]:
-				stop_loss = i[1]
-			elif 'TakeProfit1' == i[0]:
-				man_tp = i[1]
-			elif 'Risk' == i[0]:
-				risk = i[1]
 
 		#calculate the lot size
-		opLot = calcLot(symbol,balance,float(risk),float(2),float(entry_price),float(stop_loss),man_tp,'')
+		opLot = calcLot(extData["Symbol"],balance,float(extData["Risk"]),float(2),float(extData["EntryPrice"]),float(extData["StopLoss"]),extData["TakeProfit1"],'')
 		print(opLot)
 
 		print('---JOINED LIST------')
 
 		#generate a list with the balance
-		balance_arr = [['Balance',balance]]
+		balance_arr = {'Balance':balance}
 
 		#join the data from the order + the balance + the lot calculation
-		op = extData + balance_arr + opLot
+		op = extData | balance_arr | opLot
 		print(op)
 
 		#send a message to user 
 		await client.send_message('me', str(op))
 
-		print(op[0][1],op[7][1])
+		print(op['Symbol'],op['StopLoss'])
 
-		openOrder(op[0][1].upper(),op[7][1])
+		#print(op[0][1],op[7][1])
+
+
+
+		#openOrder(op[0][1].upper(),op[7][1])
 
 #infinite loop to keep listening the channel
 with client:

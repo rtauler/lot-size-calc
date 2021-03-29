@@ -9,7 +9,6 @@ def readMessage(a):
 	#split signal string to array
 	signal_arr = a.splitlines()
 
-
 	#extract values of the signal array
 	for i in signal_arr:
 		#search for symbol
@@ -17,7 +16,7 @@ def readMessage(a):
 			#remove the "/" if necessary that divides the currencies sometimes
 			if '/' in i:
 				i = re.sub('/', '', i)
-				
+
 			symbol_original = i.split("Instrument: ",1)[1]
 			symbol = symbol_original.lower()
 
@@ -42,31 +41,13 @@ def readMessage(a):
 			#print(i)
 			risk = ''.join(re.findall("\d", i))
 
-	# print('SYM:	',symbol)
-	# print('EP:	',entry_price)
-	# print('SL:	',stop_loss)
-	# print('TP1:	',take_profit_1)
-	# print('RSK:	',risk)
 
-	# print('-----')
-
-	opList = [['Symbol',symbol],['EntryPrice',entry_price],['StopLoss',stop_loss],['TakeProfit1',take_profit_1],['Risk',risk]]
+	#create list
+	opList = {'Symbol':symbol,'EntryPrice':entry_price,'StopLoss':stop_loss,'TakeProfit1':take_profit_1,'Risk':risk}
 
 	return opList
 
 
-# a = """Instrument: GBPJPY
-# Order: BUY STOP
-# Entry price: 150.82
-# Stop Loss: 150.47
-# Tp1: 151.18
-# Tp2:151.75
-# Recommended Risk: 1%
-# RRR: 1:2
-
-# Signal validity period: Good until cancelled"""
-
-# readMessage(a)
 
 
 

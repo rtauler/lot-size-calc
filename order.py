@@ -17,5 +17,7 @@ def openOrder(symbol,lot):
 
 	#print(_my_trade)
 
-	_zmq._DWX_MTX_NEW_TRADE_(_order=_my_trade)
+	print('ORDER EXECUTED:',_my_trade)
+
+	#_zmq._DWX_MTX_NEW_TRADE_(_order=_my_trade)
 
