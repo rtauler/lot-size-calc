@@ -1,0 +1,167 @@
+Instrument: USD/CAD
+Order: SELL STOP
+Entry price: 1.2558
+Stop Loss: 1.2632
+TP1: 1.2380
+TP2: 1.2480
+
+
+Signal validity period: Good until cancelled
+
+Instrument: WTI - USOIL
+Order: BUY STOP
+Entry price: 61.35
+Stop Loss: 59.00
+TP1: 64.55
+Recommended Risk: 1%
+Risk / Reward Ratio: 1.5
+
+Signal validity period: Good until cancelled
+
+Instrument: GBP/CAD
+Order: Buy - Market Execution/ Instant execution
+Entry price: 1.7416
+Stop Loss: 1.7300
+TP1: 1.7600
+Recommended Risk: 1%
+Risk / Reward Ratio: 1.5
+
+Signal validity period: Good until cancelled
+
+Instrument: AUD/NZD
+Order: Buy - Market Execution/ Instant execution
+Entry price: 1.0933
+Stop Loss: 1.0880
+TP1: 1.1037
+Recommended Risk: 1%
+Risk / Reward Ratio: 1.7
+
+Signal validity period: Good until cancelled
+
+Instrument: US30 
+Order: BUY STOP
+Entry price: 32834.05
+Stop Loss: 32690
+TP1: 33000
+Recommended Risk: 1%
+
+Signal validity period: Good until cancelled
+
+Instrument: AUDUSD
+Order: BUY STOP
+Entry price: 0.7630
+Stop Loss: 0.7560
+TP1: 0.7700
+Recommended Risk: 1%
+
+Signal validity period: Good until cancelled
+
+Instrument: UK100
+Order: SELL 
+Entry price: INSTANT EXECUTION
+Stop Loss: 6756
+TP1: 6610
+Recommended Risk: 1%
+
+Signal validity period: Good until cancelled
+
+Instrument: USDCAD
+Order: SELL STOP
+Entry price: 1.2540
+Stop Loss: 1.2615
+TP1: 1.2380
+Recommended Risk: 1%
+
+Signal validity period: Good until cancelled
+
+Instrument: GOLD
+Order: SELL STOP
+Entry price: 1730.55
+Stop Loss: 1735
+TP1: 1725
+TP2: 1715
+Recommended Risk: 1%
+
+Signal validity period: Good until cancelled
+
+Instrument: US500
+Order: SELL STOP
+Entry price: 3918.80
+Stop Loss: 3939.40
+TP1: 3889
+TP2: 3845
+Recommended Risk: 1%
+
+Signal validity period: Good until cancelled
+
+EUR/CHF Trade Signal (SWING) Instrument: EUR/CHF
+Order: Buy (Instant Execution)
+Entry price: 1.1063
+Stop: 1.0965 
+Target: 1.1285
+Recommended Risk: 1%
+RRR: 1:3
+
+Instrument: GOLD
+Order: SELL STOP
+Entry price: 1736
+Stop Loss: 1741.27
+Tp1: 1728
+tP2: 1720
+Recommended Risk: 1%
+RRR: 1:3
+
+Signal validity period: Good until cancelled
+
+Instrument: GBPJPY (re entry)
+Order: BUY NOW
+Entry price: 150.65
+Stop Loss: 150.16
+Tp1: 151.45
+tP2: 152.50
+Recommended Risk: 1%
+RRR: 1:4
+
+Signal validity period: Good until cancelled
+
+Instrument: NZDUSD
+Order: BUY STOP
+Entry price: 0.7189
+Stop Loss: 0.7128
+Tp1: 0.7248
+tP2: 0.73
+Recommended Risk: 1%
+RRR: 1:2
+
+Signal validity period: Good until cancelled
+
+Instrument: XAGUSD
+Order: SELL STOP
+Entry price: 26.15
+Stop Loss: 26.52
+Tp1: 25.64
+Recommended Risk: 1%
+RRR: 1:1.9
+
+Signal validity period: Good until cancelled
+
+Instrument: XAU/USD
+Order: SELL Stop
+Entry price: 1803.4
+Stop Loss: 1810
+Tp1: 1788
+Recommended Risk: 1%
+RRR: 1:3
+
+Signal validity period: This signal becomes invalid if it does not trigger within 2 hours to the time or if price rallies and breaks with the SL level before triggering us in.
+
+GOLD Trade Signal 
+Instrument: XAU/USD
+Order: SELL STOP
+Entry price: 1781.50
+Stop Loss:  1787.15
+Target: 1770.50
+Recommended Risk: 1 %
+RRR: 1:2.25
+
+ Signal validity period: This signal becomes invalid if it does not trigger within 2 hours to the time or if price rallies and breaks with the SL level before triggering us in.

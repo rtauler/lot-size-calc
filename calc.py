@@ -1,6 +1,7 @@
 #contract list list values
 from contracts import contract_list
 
+
 #inptus for user
 # symbol = input('Symbol?\n')
 # balance = float(input('Balance? (default is 1000) \n') or 1000)
@@ -46,13 +47,14 @@ def calcLot(symbol,balance,risk,win_ratio,entry_price,stop_loss,man_tp,man_lot):
 
 	#iterate through the list to get the contract and genrate the number of pips
 	for i in contract_list:
-	#when a symbol is found:
+		#when a symbol is found:
 		if symbol == i[0]:
 			#generate pips for stop loss
 			sl_pips = diff_e_sl * i[1]
 
 			#generate pips for take profit
 			tp_pips = diff_e_tp * i[1]
+		#if the provided symbol is not found in the list of contracts, 
 
 	#----
 
@@ -102,8 +104,8 @@ def calcLot(symbol,balance,risk,win_ratio,entry_price,stop_loss,man_tp,man_lot):
 		op_stat = 'KO' 
 
 	#create a list with all the resulting data
-	opLot = {'RecommendedLot':rec_lot,'RecommendedLotRounded':rec_lot_round,'StopLossPips':
-	sl_pips,'TakeProfit1Pips':tp_pips,'ProjectedRisk':proj_risk,'ProjectedAmmountRisk':
+	opLot = {'Type':op_type,'RecommendedLot':rec_lot,'RecommendedLotRounded':rec_lot_round,'StopLossPips':
+	int(sl_pips),'TakeProfit1Pips':int(tp_pips),'ProjectedRisk':proj_risk,'ProjectedAmmountRisk':
 	proj_amm_risk,'ProjectedAmmountWin':proj_amm_win,'MinimumViableLot':min_lot,
 	'MinimumViableRisk':min_risk,'MinimumViableWin':min_amm_win}
 
